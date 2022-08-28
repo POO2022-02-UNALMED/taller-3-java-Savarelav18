@@ -41,7 +41,10 @@ public class TV {
 	}
 
 	public void setCanal(int canal) {
-		this.canal = canal;
+
+		if (estado && canal>0 &&canal<120) {
+			this.canal = canal;
+		}
 	}
 
 	public int getPrecio() {
@@ -57,7 +60,10 @@ public class TV {
 	}
 
 	public void setVolumen(int volumen) {
-		this.volumen = volumen;
+
+		if (estado && volumen>0 && canal<7) {
+			this.volumen = volumen;
+		}
 	}
 
 	public Control getControl() {
