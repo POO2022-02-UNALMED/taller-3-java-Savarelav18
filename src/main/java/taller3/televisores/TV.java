@@ -24,6 +24,10 @@ public class TV {
 		TV.numTV = numTV;
 	}
 
+	public static int getNumTV() {
+		return numTV;
+	}
+
 	public Marca getMarca() {
 		return marca;
 	}
@@ -64,9 +68,7 @@ public class TV {
 		this.control = control;
 	}
 	
-	public int getNumTV() {
-		return numTV;
-	}
+
 	
 	public void turnOn() {estado=true;}
 	
