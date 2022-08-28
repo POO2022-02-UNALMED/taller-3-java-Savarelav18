@@ -8,7 +8,7 @@ public class TV {
 	boolean estado;
 	private int volumen;
 	Control control;
-	private static int numTV;
+	public static int numTV=0;
 	
 	public TV(Marca marca,boolean estado) {
 		this.canal=1;
@@ -16,6 +16,12 @@ public class TV {
 		this.precio=500;
 		this.marca=marca;
 		this.estado=estado;
+		numTV++;
+	}
+
+
+	public static void setNumTV(int numTV) {
+		TV.numTV = numTV;
 	}
 
 	public Marca getMarca() {
@@ -67,63 +73,26 @@ public class TV {
 	public void turnOff() {estado=false;}
 	
 	public void canalUp() {
-		
-		if (estado != true) {
-			System.out.println("El televisor debe estar encendido");
-			return;
-		}
-		
-		if (canal>120) {
-			return;
-		}
-		else {
+		if (estado && canal<120) {
 			canal++;
 		}
-		
 	}
 	
 	public void canalDown() {
-		
-		if (estado != true) {
-			System.out.println("El televisor debe estar encendido");
-			return;
-		}
-		
-		if (canal<1) {
-			return;
-		}
-		else {
+		if (estado && canal>1) {
 			canal--;
 		}
-		
 	}
-	
+
 	public void volumenUp() {
-		
-		if (estado != true) {
-			System.out.println("El televisor debe estar encendido");
-			return;
-		}
-		
-		if (volumen>7) {
-			return;
-		}
-		else {
+		if (estado && volumen<7) {
 			volumen++;
 		}
 	}
-	
+
 	public void volumenDown() {
-		if (estado != true) {
-			System.out.println("El televisor debe estar encendido");
-			return;
-		}
-		
-		if (volumen<0) {
-			return;
-		}
-		else {
-			volumen++;
+		if (estado && volumen>1) {
+			volumen--;
 		}
 	}
 	
