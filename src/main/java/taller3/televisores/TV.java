@@ -71,7 +71,15 @@ public class TV {
 	public void turnOn() {estado=true;}
 	
 	public void turnOff() {estado=false;}
-	
+
+	public void setEstado(boolean estado){
+		this.estado=estado;
+	}
+
+	public boolean getEstado(){
+		return estado;
+	}
+
 	public void canalUp() {
 		if (estado && canal<120) {
 			canal++;
